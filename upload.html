@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Text</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="upload-box">
+        <h2>Upload Text</h2>
+        <textarea id="text-input" rows="4" cols="50" placeholder="Type your text here..."></textarea>
+        <button id="submit-button">Submit</button>
+    </div>
+
+    <script>
+        document.getElementById("submit-button").onclick = function() {
+            const text = encodeURIComponent(document.getElementById("text-input").value); // Encode the text
+            window.location.href = `view.html?text=${text}`; // Redirect to view page with text as query parameter
+        };
+    </script>
+</body>
+</html>

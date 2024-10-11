@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Uploaded Text</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="view-box">
+        <h2>Uploaded Text</h2>
+        <div id="text-display"></div>
+    </div>
+
+    <script>
+        // Function to get query parameters from URL
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const uploadedText = getQueryParameter('text'); // Get text from query parameter
+        const displayArea = document.getElementById("text-display");
+        
+        if (uploadedText) {
+            displayArea.innerText = decodeURIComponent(uploadedText); // Display the uploaded text
+        } else {
+            displayArea.innerText = "No text uploaded yet.";
+        }
+    </script>
+</body>
+</html>

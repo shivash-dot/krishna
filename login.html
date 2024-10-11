@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="login-button">Login</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <script>
+        document.getElementById("login-button").onclick = function() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "HAPPY NATION") {
+                if (password === "FOLLOW EXCELLENCE") {
+                    window.location.href = "message.html"; // Redirect to message page
+                } else {
+                    document.getElementById("error-message").innerText = "Incorrect password.";
+                }
+            } else {
+                document.getElementById("error-message").innerText = "Incorrect username.";
+            }
+        };
+    </script>
+</body>
+</html>
